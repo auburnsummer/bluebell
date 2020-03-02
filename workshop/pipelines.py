@@ -41,4 +41,7 @@ class LastUpdatedPipeline(object):
             # fallback: it was last updated today! (i.e. always refresh this one)
             item['last_updated'] = datetime.datetime.now()
         
+        # then, generate a unique ID for this item.
+        item['iid'] = f"{item['game_id']}:{item['id']}:{item['last_updated']}"
+        
         return item
