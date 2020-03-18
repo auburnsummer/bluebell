@@ -34,11 +34,11 @@ async def test(request):
     return sanic.response.json({"hello": "world"})
 
 
-@app.route("/levels")
-async def dir(request):
+@app.route("/<game_id>/levels")
+async def dir(request, game_id):
     # await asyncio.sleep(5)
     os.unlink(TEMP_FILE)
-    cmd = f"scrapy crawl WorkshopListing -a game_id=440310 -o {TEMP_FILE}"
+    cmd = f"scrapy crawl WorkshopListing -a game_id={game_id} -o {TEMP_FILE}"
     proc = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,
