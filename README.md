@@ -1,5 +1,7 @@
 # What is this?
 
+[![](https://img.shields.io/docker/image-size/auburnsummer/bluebell)](https://hub.docker.com/r/auburnsummer/bluebell) [![](https://img.shields.io/github/license/auburnsummer/bluebell)](LICENSE)
+
 This has two things:
 
 - A Steam Workshop scraper (using [Scrapy][2])
