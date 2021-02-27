@@ -57,7 +57,9 @@ async def dir(request, game_id):
 async def dl(request, game_id, item_id):
     # if os.path.exists(TEMP_DIR):
     #    shutil.rmtree(TEMP_DIR)
-    cmd = f"steamcmd +login anonymous +force_install_dir {TEMP_DIR} +workshop_download_item {game_id} {item_id} +quit"
+    steam_user = os.environ["STEAM_USER"]
+    steam_pass = os.environ["STEAM_PASSWORD"]
+    cmd = f"steamcmd +login {steam_user} {steam_pass} +force_install_dir {TEMP_DIR} +workshop_download_item {game_id} {item_id} +quit"
     proc = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,

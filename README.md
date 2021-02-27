@@ -23,20 +23,19 @@ performance any good.
 
 # Quickstart
 
+## environment variables
+
+`STEAM_USERNAME` = steam username
+`STEAM_PASSWORD` = steam password
+
 ## Docker container
 
-There's a Docker container, which is probably the fastest way to get started:
+The docker container probably doesn't work!! plz don't use it for now
 
-```
-docker run -p 8000:8000 auburnsummer/bluebell:latest
-```
-
-There is a volume mount at `/tmp/bluebellws` which you may wish to mount onto the filesystem for better write performance.
 
 ## Scraping
 
-Let's say we want to browse the workshop items for [Project Arrythmia][3]. Project Arrythmia allows anonymous downloads of
-items which is a pre-requisite for bluebell (because bluebell only uses anonymous downloads at the moment). From the URL,
+Let's say we want to browse the workshop items for [Project Arrythmia][3]. From the URL,
 the game ID of Project Arrythmia is `440310`. The endpoint `/<game_id>/levels` will trigger the scraper. For instance, if
 you are running the Docker container on your local machine, you could go to `localhost:8000/440310/levels`.
 
