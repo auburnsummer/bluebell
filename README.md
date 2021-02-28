@@ -25,10 +25,14 @@ performance any good.
 
 ## environment variables
 
-`STEAM_USERNAME` = steam username
+`STEAM_USER` = steam username
 `STEAM_PASSWORD` = steam password
 
 define these with `export` before you start
+
+also you should install steamcmd, and log in at least once to remove the Steam Guard check
+
+also you need bsdtar installed !!!!
 
 ## Docker container
 
