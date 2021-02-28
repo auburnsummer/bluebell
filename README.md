@@ -28,6 +28,8 @@ performance any good.
 `STEAM_USERNAME` = steam username
 `STEAM_PASSWORD` = steam password
 
+define these with `export` before you start
+
 ## Docker container
 
 The docker container probably doesn't work!! plz don't use it for now
