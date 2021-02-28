@@ -43,6 +43,8 @@ async def dir(request, game_id):
     if not (os.path.exists(TEMP_DIR)):
         os.mkdir(TEMP_DIR)
     abs_file = f"{TEMP_DIR}/{TEMP_FILE}"
+    if (os.path.exists(abs_file)):
+        os.remove(abs_file)
     cmd = f"scrapy crawl WorkshopListing -a game_id={game_id} -o {abs_file}"
     proc = await asyncio.create_subprocess_shell(
         cmd,
