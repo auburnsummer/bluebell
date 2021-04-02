@@ -1,0 +1,19 @@
+curl --request POST \
+  --url http://store.steampowered.com/login/getrsakey \
+  --location --verbose --post302 \
+  --form username=3_35_40
+
+curl --request POST \
+  --url http://store.steampowered.com/login/dologin \
+  --location --verbose --post302 \
+  --form 'password=RsdfP04LgWxQOoAAeuFmgHghPO8QFKsctO8AX3CFGc7kGwrDv0ySJEYJGT74nsqkrFXEJcK7vzYPcCaroWjlz4uVTWdlhqRM4ANY6CqC8iLevfsSALr9kKdlU88xCsoVek9qnreKOSI45vm8pnYKK/5ocRSHdoIhwu+Usw8KKdnb9/KriEBq4suweLzY4upSFJ6cy2zNI1vixm/S2vMo0jMoqN8TautwqH2qQ0HKdBWXvUl/Om4VLnOONASUVE5U6YVjFkBs5c5M/6uRJPxf5TblOKNq0xVgOmJFIrph+Up0SgO+sDmekyZg6ztyo4kV3CeejXK7RdDgI+Vr5wXm/w==' \
+  --form username=3_35_40 \
+  --form twofactorcode= \
+  --form emailauth= \
+  --form loginfriendlyname= \
+  --form captchagid= \
+  --form captcha_text= \
+  --form emailsteamid= \
+  --form rsatimestamp=190882050000 \
+  --form remember_login=false \
+  --form =

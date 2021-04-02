@@ -23,7 +23,7 @@ class LastUpdatedPipeline(object):
         return f"https://steamcommunity.com/sharedfiles/filedetails/?id={id}"
     
     def process_item(self, item, spider):
-        request = scrapy.Request(url=self.make_workshop_url(item['id']))
+        request = scrapy.Request(url=self.make_workshop_url(item['id']), cookies=spider.trefoils)
         dfd = spider.crawler.engine.download(request, spider)
         dfd.addBoth(self.return_item, item)
         return dfd
