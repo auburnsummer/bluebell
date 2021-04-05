@@ -87,5 +87,11 @@ async def dl(request, game_id, item_id):
     else:
         raise ServerError(stdout2, status_code=500)
 
+@app.route("/purge")
+async def purge(request):
+    if os.path.exists(TEMP_DIR):
+        shutil.rmtree(TEMP_DIR)
+    return sanic.response.json({"hello" : "world"})
+
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8000)
